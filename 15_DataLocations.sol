@@ -7,6 +7,7 @@ pragma solidity 0.8.19;
 // Calldata -> It's similar to memory but it contains function args.
 
 contract Example {
+    // These 2 variables are state variables and stored in the storage
     uint storedData; // stored in storage
     string storedString; // stored in storage
 
@@ -23,9 +24,9 @@ contract Example {
         uint[] memory result = new uint[](nums.length);
 
         for (uint i = 0; i < nums.length; i++) {
-            result[i] = nums[i] * 2;
+            result[i] = nums[i] * 2; // stored in memory and will be lost after execution
         }
 
-        return result;
+        return result; // returned from memory
     }
 }
